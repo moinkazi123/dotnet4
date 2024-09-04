@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 4.8
+      dotnet: 4.8  # Ensure this is correct for .NET Framework
   build:
     commands:
+      - echo "Building the application..."
       - msbuild HelloWorldDotNetFramework.sln /p:Configuration=Release
 artifacts:
   files:
