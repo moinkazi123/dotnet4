@@ -1,14 +1,13 @@
 version: 0.2
 
 phases:
-    install:
-          runtime-versions:
-                  dotnet: 4.8
-                      build:
-                            commands:
-                                    - msbuild HelloWorldDotNetFramework.sln /p:Configuration=Release
-                            artifacts:
-                                files:
-                                      - '**/*'
-                                          discard-paths: yes
-
+  install:
+    runtime-versions:
+      dotnet: 4.8
+  build:
+    commands:
+      - msbuild HelloWorldDotNetFramework.sln /p:Configuration=Release
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
