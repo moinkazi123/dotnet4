@@ -1,7 +1,7 @@
 version: 0.0
 os: windows
 files:
-  - source: \HelloWorldDotNetFramework\bin\Debug\HelloWorldDotNetFramework.exe
+  - source: HelloWorldDotNetFramework\bin\Debug\HelloWorldDotNetFramework.exe
     destination: C:\inetpub\wwwroot\HelloWorldDotNetFramework\
 hooks:
   AfterInstall:
