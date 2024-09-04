@@ -1,0 +1,11 @@
+version: 0.0
+os: windows
+files:
+    - source: \HelloWorldDotNetFramework\bin\Debug\HelloWorldDotNetFramework.exe
+          destination: C:\inetpub\wwwroot\HelloWorldDotNetFramework\
+          hooks:
+              AfterInstall:
+                    - location: deploy.ps1
+                            timeout: 300
+                                    runas: Administrator
+
