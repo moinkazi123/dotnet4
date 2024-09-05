@@ -1,9 +1,8 @@
 version: 0.0
 os: windows
 files:
-files:
   - source: HelloWorldDotNetFramework\bin\Release\HelloWorldDotNetFramework.exe
-    destination: C:\inetpub\wwwroot\HelloWorldDotNetFramework\
+    destination: C:\app\HelloWorldDotNetFramework\
 hooks:
   AfterInstall:
     - location: deploy.ps1
