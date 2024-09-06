@@ -2,20 +2,24 @@ version: 0.2
 
 env:
   variables:
-    AWS_DEFAULT_REGION: ap-south-1
-    
+    AWS_DEFAULT_REGION: ap-south-1  # Ensure that all AWS actions are performed in the correct region
+
 phases:
   install:
     runtime-versions:
       dotnet: 4.8
+    commands:
+      - echo "Installing dependencies..."
   build:
     commands:
+      - echo "Building the .NET project..."
       - msbuild HelloWorldDotNetFramework.sln /p:Configuration=Release
+
 artifacts:
   files:
-    - '**/*'
-  name: my-artifact  
+    - '**/*'  # Include all files from the build
   discard-paths: yes
+  name: my-artifact
   s3-bucket: dotnet12bucket
   s3-prefix: build
-  s3-region: ap-south-1  # This is the region for Mumbai
+  s3-region: ap-south-1  # Ensure correct region is specified for S3 bucket
