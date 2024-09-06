@@ -11,4 +11,4 @@ artifacts:
   files:
     - '**/*'
   discard-paths: no
-
+  location: s3://dotnet12bucket
