@@ -10,6 +10,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  discard-paths: no
+  discard-paths: yes
   s3-bucket: dotnet12bucket
   s3-region: ap-south-1  # This is the region for Mumbai
