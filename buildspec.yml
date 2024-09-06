@@ -11,4 +11,6 @@ artifacts:
   files:
     - '**/*'
   discard-paths: no
-  location: s3://dotnet12bucket
+  s3-bucket: dotnet12bucket
+  s3-prefix: build
+  s3-region: ap-south-1  # This is the region for Mumbai
