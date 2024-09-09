@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_DEFAULT_REGION: us-east-1  # Ensure that all AWS actions are performed in the correct region
+    AWS_DEFAULT_REGION: ap-south-1  # Ensure this matches the region of your S3 bucket
 
 phases:
   install:
@@ -20,6 +20,6 @@ artifacts:
     - '**/*'  # Include all files from the build
   discard-paths: yes
   name: my-artifact
-  s3-bucket: dotnet12bucket  # S3 bucket should be in the same region (us-east-1)
+  s3-bucket: dotnet12bucket  # Name of the S3 bucket
   s3-prefix: build
-  region: us-east-1  # Ensure the correct region is specified for S3 bucket
+  region: ap-south-1  # Correct region for S3 bucket
