@@ -2,8 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_DEFAULT_REGION: ap-south-1  # Ensure this is set to ap-south-1 for artifact uploads
-    CODEBUILD_BUILD_REGION: ap-south-1  # For the artifact upload phase to be region-correct
+    AWS_DEFAULT_REGION: ap-south-1  # Ensure that all AWS actions are performed in the correct region
 
 phases:
   install:
@@ -18,10 +17,9 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - '**/*'  # Include all files from the build
   discard-paths: yes
   name: my-artifact
-  s3-bucket: arn:aws:s3::911167891314:accesspoint/ma85pkon3s33y.mrap  # Multi-Region Access Point ARN
+  s3-bucket: dotnet12bucket  # Use the original S3 bucket directly
   s3-prefix: build
-  encryption-disabled: true  # Explicitly set encryption if needed, based on policy
-  region: ap-south-1  # Explicitly mention the region for artifact upload
+  region: ap-south-1  # Ensure correct region is specified for S3 bucket
