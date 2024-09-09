@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_DEFAULT_REGION: ap-south-1  # Ensure all AWS actions are performed in the correct region
+    AWS_DEFAULT_REGION: us-east-1  # Since CodeBuild is running in us-east-1
 
 phases:
   install:
@@ -20,5 +20,5 @@ artifacts:
     - '**/*'  # Include all files from the build
   discard-paths: yes
   name: my-artifact
-  s3-bucket: dotnet12bucket  # Make sure the bucket is in 'ap-south-1'
+  s3-bucket: arn:aws:s3::911167891314:accesspoint/ma85pkon3s33y.mrap  # Use the Multi-Region Access Point ARN
   s3-prefix: build
