@@ -1,11 +1,12 @@
-# Copy the executable to the desired folder
-Copy-Item -Path "C:\path-to-source\HelloWorldDotNetFramework.exe" -Destination "C:\app\HelloWorldDotNetFramework\" -Force
+# Define the source and destination paths
+$sourcePath = "C:\Users\Administrator\Desktop\dotnet-custom-action\source\HelloWorldDotNetFramework\bin\Release\HelloWorldDotNetFramework.exe"
+$destinationPath = "C:\app\HelloWorldDotNetFramework\"
 
-# Optional: If your console app requires additional dependencies or configuration files, you can copy them here as well.
-# Example:
-# Copy-Item -Path "C:\path-to-source\*.config" -Destination "C:\app\HelloWorldDotNetFramework\" -Force
+# Copy the executable to the desired folder
+Write-Output "Copying executable to destination folder..."
+Copy-Item -Path $sourcePath -Destination $destinationPath -Force
 
 # Start the console application
-Start-Process -FilePath "C:\app\HelloWorldDotNetFramework\HelloWorldDotNetFramework.exe"
+Write-Output "Starting the application..."
+Start-Process -FilePath "$destinationPath\HelloWorldDotNetFramework.exe"
 
-# Optionally, you can run the console application as a background process or service, depending on your requirements.
