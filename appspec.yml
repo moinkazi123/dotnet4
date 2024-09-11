@@ -4,6 +4,10 @@ files:
   - source: /HelloWorldDotNetFramework.exe
     destination: C:\app\HelloWorldDotNetFramework\
 hooks:
+  BeforeInstall:
+    - location: download-artifact.ps1
+      timeout: 300
+      runas: Administrator
   AfterInstall:
     - location: deploy.ps1
       timeout: 300
