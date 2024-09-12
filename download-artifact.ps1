@@ -1,6 +1,6 @@
 # Define the S3 bucket and object key
-$bucketName = "codepipeline-ap-south-1-497905382056"
-$objectKey = "dotnet-custom-action/BuildArtif/HelloWorldDotNetFramework.exe"
+$bucketName = "codepipeline-ap-south-1-255966877743"
+$objectKey = "dotnet-custom-build/BuildArtif/HelloWorldDotNetFramework.exe"
 $destinationPath = "C:\Users\Administrator\Desktop\dotnet-custom-action\source\HelloWorldDotNetFramework\bin\Release\HelloWorldDotNetFramework.exe"
 
 # Download the file from S3
